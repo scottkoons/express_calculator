@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Express Calculator</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Welcome to the Express Calculator.</h1>
+        <div>
+            <h3>Requirements</h3>
+            <p>The three base routes are <cite>/mean</cite>, <cite>/median</cite>, <cite>/mode</cite>. All accept GET
+                requests
+            </p>
+            <p>Each route takes a query key of <cite>nums</cite> which is a comma-separated list of numbers. For
+                example, if
+                I
+                want to get the mean of 1, 3, 5, and 7, that would look like be a GET request to
+                <cite>/mean?nums=1,3,5,7</cite>.
+            </p>
+            <p>The response of each operation should be JSON which looks like this:</p>
+            <div class="highlight-js notranslate">
+                <div class="highlight">
+                    <pre><span></span><span class="nx">response</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">operation</span><span class="o">:</span> <span class="s2">"mean"</span><span class="p">,</span>
+      <span class="nx">value</span><span class="o">:</span> <span class="mi">4</span>
+    <span class="p">}</span>
+    </pre>
+                </div>
+            </div>
+            <p>The app should “gracefully” handle the following errors:</p>
+            <blockquote>
+                <div>
+                    <ul class="simple">
+                        <li>Passing in an invalid number (NaN errors). For instance, <cite>/mean?nums=foo,2,3</cite>
+                            should
+                            respond with a <cite>400 Bad Request</cite> status code and a response that saying something
+                            like:
+                            <cite>foo is not a number</cite>.
+                        </li>
+                        <li>Empty input: <cite>/mean</cite> without passing any <cite>nums</cite> should respond with a
+                            <cite>400 Bad Request</cite> status code saying something like <cite>nums are
+                                required</cite>.
+                        </li>
+                    </ul>
+                </div>
+            </blockquote>
+            <p>Make sure you have unit tests for <cite>mean</cite>, <cite>median</cite> and <cite>mode</cite>.</p>
+        </div>
+    </div>
+</body>
+
+</html>
